@@ -1,113 +1,72 @@
-import Image from 'next/image'
+"use client"
+
+import { useState } from "react"
+
+import TextArea from "@/components/textarea";
+import { ArrowLeftRight, ArrowUpDown } from "lucide-react";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+  const [decimal, setDecimal] = useState(String())
+  const [binary, setBinary] = useState(String())
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+  return (
+    <main className="flex flex-col">
+    <div className="flex justify-center items-center px-[1rem] xl:px-[15rem] min-h-[100vh]">
+      <div className="w-full p-[2rem] flex flex-col 2xl:flex-row justify-center items-center gap-[1rem] xl:gap-[2rem]">
+        <TextArea
+          type="decimal" 
+          setBinary={setBinary}
+          setDecimal={setDecimal}
+          label={"Decimal"}
+          sublabel={"Informe abaixo um número em decimal"}
+          placeholder={"849327226324345..."}
+          value={decimal}
+        />
+        <div className="hidden 2xl:flex">
+          <ArrowLeftRight size={"2rem"} color="rgb(63 63 70)"/>
+        </div>
+        <div className="flex 2xl:hidden">
+          <ArrowUpDown size={"1.6rem"} color="rgb(63 63 70)"/>
+        </div>
+        <TextArea
+          type="binary"
+          setBinary={setBinary}
+          setDecimal={setDecimal}
+          label={"Binário"}
+          sublabel={"Informe abaixo um número em binário"}
+          placeholder={"110110111011101..."}
+          value={binary}
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+    </div>
+    <div className="flex flex-col justify-center px-[1rem] xl:px-[15rem] min-h-[100vh] gap-[2.8rem]">
+      <h1 className="text-[2rem] text-zinc-700 font-bold">Como é feita a conversão</h1>
+      <div className="flex flex-col gap-[1rem]">
+        <h2 className="text-[1.4rem] text-zinc-700 font-bold">Binário para Decimal:</h2>
+        <p>
+            <strong>1. Posicionamento dos Dígitos:</strong> Ao converter um número binário para decimal, a posição de cada dígito é fundamental. O dígito mais à direita representa 2<sup>0</sup> o próximo à esquerda 2<sup>1</sup>, e assim por diante.
+        </p>
+        <p>
+            <strong>2. Exponenciação de 2:</strong> Aplica-se a exponenciação de 2 a cada posição do dígito binário. Por exemplo, para 1101, o cálculo seria 1 * 2<sup>3</sup> + 1 * 2<sup>2</sup> + 0 * 2<sup>1</sup> + 1 * 2<sup>0</sup>.
+        </p>
+        <p>
+            <strong>3. Multiplicação e Soma:</strong> A multiplicação dos dígitos binários pelas potências de 2 resulta em valores individuais para cada posição. A soma destes valores fornece o equivalente decimal.
+        </p>
       </div>
+
+      <div className="flex flex-col gap-[1rem]">
+        <h2 className="text-[1.4rem] text-zinc-700 font-bold">Decimal para Binário:</h2>
+        <p>
+            <strong>1. Divisão por 2:</strong> Ao converter decimal para binário, começamos dividindo por 2. O resto é o dígito menos significativo do número binário.
+        </p>
+        <p>
+            <strong>2. Continue Dividindo:</strong> O quociente é dividido por 2, repetindo o processo até que o quociente seja zero. Os restos são anotados em ordem inversa.
+        </p>
+        <p>
+            <strong>3. Número Binário:</strong> Lendo os restos da última divisão para a primeira, obtemos o número binário equivalente.
+        </p>
+      </div>
+    </div>
     </main>
   )
 }
