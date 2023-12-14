@@ -1,14 +1,20 @@
 import type { Metadata } from 'next'
-import { Inter, Montserrat } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
-import Footer from '@/components/footer'
+
 import Header from '@/components/header/page'
 
 const font = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bin2Dec - Binário para decimal e vice-versa',
-  description: 'Conversor de binário para decimal e vice-versa',
+  title: 'B2D - Binário para decimal e vice-versa',
+  description: 'Conversor binário para decimal e vice-versa',
+  openGraph:{
+    type: "website",
+    locale: "pt_BR",
+    url: "https://b2d.vercel.app",
+    siteName: "B2D"
+  }
 }
 
 export default function RootLayout({
@@ -18,6 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+      </head>
       <body className={font.className}>
         <Header />
         {children}
