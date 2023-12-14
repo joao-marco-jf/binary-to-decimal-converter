@@ -55,7 +55,13 @@ export default function TextArea(props: TextAreaTypes){
                     "
                 />
                 <div className="flex items-center justify-between flex-row-reverse p-[1rem] text-zinc-400 ">
-                    {props.disabled && <CopyIcon className="cursor-pointer" size={"1.2rem"} strokeWidth={1.5} />}
+                    {props.disabled && 
+                    <button onClick={() => {
+                        navigator.clipboard.writeText(props.value ? props.value : "Texto não copiado")
+                    }}>
+                        <CopyIcon className="cursor-pointer" size={"1.2rem"} strokeWidth={1.5} />
+                    </button>
+                    }
                     {props.disabled
                     ?<p className="text-sm md:text-lg">{props.value?.length}</p>
                     :<p className="text-sm md:text-lg">{props.value?.length}/75</p>
