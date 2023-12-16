@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
+        <meta name="google-site-verification" content="wcPcsAGOMJLtvdcd0pk_o8SLBIX3kpuEiHbiiHjaaQo" />
         <Script id='breadcrumb-list' type="application/ld+json">
           {`{
             "@context": "https://schema.org",
