@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
-        <Script type="application/ld+json">
+        <Script id='breadcrumb-list' type="application/ld+json">
           {`{
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
