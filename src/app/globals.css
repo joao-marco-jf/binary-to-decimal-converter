@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 *{
-    color: rgb(161 161 170);
+    color: black;
 }
 
 h1{
-    color: rgb(113 113 122);
+    color: rgb(17, 100, 255);
     font-weight: 700;
 }

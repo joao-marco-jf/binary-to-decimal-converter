@@ -17,8 +17,7 @@ export default function TextArea(props: TextAreaTypes){
                 flex-col
                 aria-disabled:bg-zinc-200
                 border-[1px]
-                border-zinc-200
-                rounded-lg
+                border-zinc-300
             ">
                 <textarea
                     onChange={(event) => {
@@ -39,7 +38,7 @@ export default function TextArea(props: TextAreaTypes){
                     value={props.value}
                     maxLength={75}
                     disabled={props.disabled}
-                    placeholder={props.disabled ? "Convertido" : "Insira um valor"}
+                    placeholder={props.disabled ? "Valor convertido" : "Insira um valor"}
                     className="
                         resize-none
                         w-full
@@ -47,14 +46,12 @@ export default function TextArea(props: TextAreaTypes){
                         md:h-[12rem]
                         p-[1rem]
                         outline-none
-                        rounded-lg
                         disabled:bg-zinc-200
-                        text-zinc-500
                         text-md
                         md:text-lg
                     "
                 />
-                <div className="flex items-center justify-between flex-row-reverse p-[1rem] text-zinc-400 ">
+                <div className="flex items-center justify-between flex-row-reverse p-[1rem]">
                     {props.disabled && 
                     <button onClick={() => {
                         navigator.clipboard.writeText(props.value ? props.value : "Texto não copiado")

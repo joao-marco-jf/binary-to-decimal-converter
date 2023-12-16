@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 
 import Header from '@/components/header/page'
+import Script from 'next/script'
 
 const font = Montserrat({ subsets: ['latin'] })
 
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://b2d.vercel.app",
-    siteName: "B2D"
+    siteName: "B2D",
+    images: "/b2d-logo.png"
   }
 }
 
@@ -24,6 +26,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <head>
+        <Script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Sobre a aplicação",
+              "item": "https://b2d.vercel.app/how-it-works"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sobre o desenvolvedor",
+              "item": "https://b2d.vercel.app/about-the-developer"
+            }]
+          }`}
+        </Script>
+      </head>
       <body className={font.className}>
         <Header />
         {children}

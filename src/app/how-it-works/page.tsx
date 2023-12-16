@@ -1,9 +1,11 @@
+import Link from "next/link"
+
 export default function pageHowItWork(){
     return(
         <main className="flex flex-col p-[1rem] md:p-[5rem] lg:px-[10rem] xl:px-[20rem] 2xl:px-[30rem] gap-[2.8rem] text-md lg:text-lg">
             <h1 className="text-[1.6rem] md:text-[2rem]">Por qual intuito essa aplicação foi desenvolvida</h1>
             <p>Está aplicação foi desenvolvida com o intuito de demostrar certas vantagens na utilização de NextJS e ReactJS em projetos de pequeno porte. O desenvolvimento deste projeto utilizando do framework NextJS não apresentou quaisquer dificuldade indicando que a utilização deste framework em projetos de pequeno porte também é viável e até mesmo se provou com um facilitador no desenvolvimento.</p>
-            <p>Para fins de estudos sobre a utilização do framework NextJS e ReactJS o código desta aplicação estará completamente disponível em um repositório no GitHub.</p>
+            <p>Para fins de estudos sobre a utilização do framework NextJS e ReactJS o código desta aplicação estará completamente disponível neste <Link href="https://github.com/joao-marco-jf/binary-to-decimal-converter"><u>repositório</u></Link>.</p>
 
             <h1 className="text-[1.6rem] md:text-[2rem]">Como é feita a conversão</h1>
             <p>A abordagem da conversão entre sistemas binário e decimal demanda uma compreensão técnica refinada, focada na precisa disposição dos dígitos e nas operações fundamentais envolvidas.</p>
